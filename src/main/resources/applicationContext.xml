@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="application.properties"/>
+    <bean id="Animal"
+          class="org.example.madel.Dog"/>
+
+    <bean id="Dog"
+          class="org.example.madel.Dog">
+        <property name = "name" value = "${dog.name}"/>
+    </bean>
+
+    <bean id="Hourse"
+          class="org.example.madel.House">
+        <property name="name" value="${house.name}"/>
+    </bean>
+
+    <bean id="Person"
+          class="org.example.madel.Person">
+        <property name="age" value="${person.age}"/>
+        <property name="animal" value="${person.animal}"/>
+        <property name="name" value="${person.name}"/>
+    </bean>
+
+    <bean id="Person2"
+          class="org.example.madel.Person">
+        <property name="age" value="${person2.age}"/>
+        <property name="animal" value="${person2.animal}"/>
+        <property name="name" value="${person2.name}"/>
+    </bean>
+</beans>
